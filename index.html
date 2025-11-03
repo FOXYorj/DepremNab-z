@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>DepremNabız — Canlı Depremler</title>
+
+  <link rel="stylesheet" href="style.css"/>
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+</head>
+<body>
+  <header>
+    <div class="container header-inner">
+      <h1>🌐 DepremNabız</h1>
+      <div class="controls">
+        <button id="loc-btn" title="Konumumu kullan">📍 Konumumu Kullan</button>
+        <label class="switch">
+          <input type="checkbox" id="notify-toggle"/>
+          <span class="slider"></span>
+        </label>
+        <span class="small">Bildirim</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="map-card">
+      <div id="map"></div>
+    </section>
+
+    <aside class="list-card">
+      <div class="list-header">
+        <h2>Son Depremler</h2>
+        <div class="meta">
+          <span id="last-update">—</span>
+          <button id="refresh">Yenile</button>
+        </div>
+      </div>
+      <div id="quake-list" class="quake-list"></div>
+      <div id="closest" class="closest">Konumunuzu seçin veya "Konumumu Kullan" a tıklayın.</div>
+    </aside>
+  </main>
+
+  <footer>
+    Veri kaynağı: Orhan Aydoğdu API (AFAD türevi) — <small>Canlı veri</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
